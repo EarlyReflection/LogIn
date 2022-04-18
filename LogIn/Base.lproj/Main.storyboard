@@ -53,10 +53,10 @@
                                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="forgotUserNamePressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="amX-4o-HcL"/>
+                                                    <action selector="forgotPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Hl-hj-qHo"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8f-7d-P6i">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="g8f-7d-P6i">
                                                 <rect key="frame" x="149" y="0.0" width="139" height="40"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Forgot Password?">
@@ -64,7 +64,7 @@
                                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="forgotPasswordPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="ysF-m0-nXM"/>
+                                                    <action selector="forgotPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pR0-vw-kcg"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -140,7 +140,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bsL-7O-So6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="GtD-mc-VWc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="767" y="91"/>
+            <point key="canvasLocation" x="711" y="97"/>
         </scene>
     </scenes>
     <resources>

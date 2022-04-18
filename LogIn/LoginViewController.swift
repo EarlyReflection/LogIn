@@ -31,15 +31,16 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func forgotUserNamePressed() {
-        showAlert(with: "Ooops!", and: " Your name is: \(username)")
-        userNameTextField.text = ""
+    @IBAction func forgotPressed(_ sender: UIButton) {
+        if sender.tag == 0 {
+            userNameTextField.text = ""
+            showAlert(with: "Ooops!", and: " Your name is: \(username)")
+            
+        } else {
+            showAlert(with: "Ooops!", and: " Your password is: \(password)")
+            passwordTextField.text = ""
+        }
         
-    }
-    
-    @IBAction func forgotPasswordPressed() {
-        showAlert(with: "Ooops!", and: " Your password is: \(password)")
-        passwordTextField.text = ""
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
