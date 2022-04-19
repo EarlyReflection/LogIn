@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
     
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
@@ -50,8 +50,9 @@ class ViewController: UIViewController {
 }
 
 
+
 // MARK: - Alert Controller
-extension ViewController {
+extension LoginViewController {
     private func showAlert(with title: String, and message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default)
@@ -60,5 +61,23 @@ extension ViewController {
     }
 }
 
-
+// MARK: - UITextfieldDelegate
+extension LoginViewController: UITextFieldDelegate {
+    //метод для скрытия и показа клавиатуры по нажатию за ее пределами
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+    //метод вызывает мигающий курсор и отвечает за его перемещение в соседнее текстовое поле,
+    //в ветке else срабатывает переход на второй экран по нажатию кнопки return на клавиатуре телефона
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == userNameTextField {
+            passwordTextField.becomeFirstResponder()
+        } else {
+            logInPressed()
+            performSegue(withIdentifier: "showGreeting", sender: nil)
+        }
+        return true
+    }
+}
 
