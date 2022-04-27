@@ -12,38 +12,37 @@ class LoginViewController: UIViewController {
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
-    private let username = "qwerty"
-    private let password = "12345"
+    private let currentUser = User.getUser()
     
-    // prepare - передает данные из LoginViewController в LogOutViewController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let logOutVC = segue.destination as? LogOutViewController else {return}
-        logOutVC.greeting = "Hello, \(username)!"
+        logOutVC.userName = currentUser.person.name + " " + currentUser.person.surname
+        logOutVC.userProfession = currentUser.person.profession
     }
     
     @IBAction func logInPressed() {
-        if  userNameTextField.text != username || passwordTextField.text != password {
-            showAlert(
-                with: "Invalid login or password",
-                and: "Enter correct login and password"
-            )
-            passwordTextField.text = ""
-        }
+//        if  userNameTextField.text != currentUser.login || passwordTextField.text != currentUser.password {
+//            showAlert(
+//                with: "Invalid login or password",
+//                and: "Enter correct login and password"
+//            )
+//            passwordTextField.text = ""
+//        }
     }
     
     @IBAction func forgotPressed(_ sender: UIButton) {
         if sender.tag == 0 {
             userNameTextField.text = ""
-            showAlert(with: "Ooops!", and: " Your name is: \(username)")
+            showAlert(with: "Ooops!", and: " Your name is: \(currentUser.login)")
             
         } else {
-            showAlert(with: "Ooops!", and: " Your password is: \(password)")
+            showAlert(with: "Ooops!", and: " Your password is: \(currentUser.password)")
             passwordTextField.text = ""
         }
         
     }
     
-    @IBAction func unwind(for segue: UIStoryboardSegue) {
+    @IBAction func unwindToLogin(for segue: UIStoryboardSegue) {
         userNameTextField.text = ""
         passwordTextField.text = ""
     }
