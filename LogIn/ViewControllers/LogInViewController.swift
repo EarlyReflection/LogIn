@@ -9,10 +9,33 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    @IBOutlet var userNameTextField: UITextField!
-    @IBOutlet var passwordTextField: UITextField!
+    @IBOutlet var userNameTextField: UITextField! {
+            didSet {
+                // изменить текст и цвет paceholder
+                let placeholderText = NSAttributedString(
+                    string: "user",
+                    attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+                )
+                userNameTextField.attributedPlaceholder = placeholderText
+            }
+    }
+    @IBOutlet var passwordTextField: UITextField! {
+        didSet{
+            let placeholderText = NSAttributedString(
+                string: "password",
+                attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+            )
+            passwordTextField.attributedPlaceholder = placeholderText
+        }
+    }
     
     private let currentUser = User.getUser()
+    
+    override func viewDidLoad() {
+        userNameTextField.textColor = UIColor.black
+        passwordTextField.textColor = UIColor.black
+    
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let logOutVC = segue.destination as? LogOutViewController else {return}
