@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D14A0AB227FC986A00C9BA1D /* LogOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14A0AB127FC986A00C9BA1D /* LogOutViewController.swift */; };
+		D17D0DD5281DC32A007976A0 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17D0DD4281DC32A007976A0 /* ContactViewController.swift */; };
 		D1CB9934281AA5AD00440CF7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CB9933281AA5AD00440CF7 /* ProfileViewController.swift */; };
 		D1E7FBFB27FB5765007D0880 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E7FBFA27FB5765007D0880 /* AppDelegate.swift */; };
 		D1E7FBFD27FB5765007D0880 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E7FBFC27FB5765007D0880 /* SceneDelegate.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		D14A0AB127FC986A00C9BA1D /* LogOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutViewController.swift; sourceTree = "<group>"; };
+		D17D0DD4281DC32A007976A0 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		D1CB9933281AA5AD00440CF7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D1E7FBF727FB5765007D0880 /* LogIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LogIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1E7FBFA27FB5765007D0880 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				D1E805AE2819D18700A44D17 /* ResumeViewController.swift */,
 				D1E805B02819D1BD00A44D17 /* PhotosViewController.swift */,
 				D1CB9933281AA5AD00440CF7 /* ProfileViewController.swift */,
+				D17D0DD4281DC32A007976A0 /* ContactViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 				D1E7FBFF27FB5765007D0880 /* LogInViewController.swift in Sources */,
 				D1E7FBFB27FB5765007D0880 /* AppDelegate.swift in Sources */,
 				D14A0AB227FC986A00C9BA1D /* LogOutViewController.swift in Sources */,
+				D17D0DD5281DC32A007976A0 /* ContactViewController.swift in Sources */,
 				D1F4FE9C2814783400D84233 /* User.swift in Sources */,
 				D1CB9934281AA5AD00440CF7 /* ProfileViewController.swift in Sources */,
 				D1E7FBFD27FB5765007D0880 /* SceneDelegate.swift in Sources */,

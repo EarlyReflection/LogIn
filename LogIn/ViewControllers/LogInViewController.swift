@@ -10,14 +10,14 @@ import UIKit
 class LoginViewController: UIViewController {
     
     @IBOutlet var userNameTextField: UITextField! {
-            didSet {
-                // изменить текст и цвет paceholder
-                let placeholderText = NSAttributedString(
-                    string: "user",
-                    attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
-                )
-                userNameTextField.attributedPlaceholder = placeholderText
-            }
+        didSet {
+            // изменить текст и цвет paceholder
+            let placeholderText = NSAttributedString(
+                string: "user",
+                attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+            )
+            userNameTextField.attributedPlaceholder = placeholderText
+        }
     }
     @IBOutlet var passwordTextField: UITextField! {
         didSet{
@@ -34,23 +34,33 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         userNameTextField.textColor = UIColor.black
         passwordTextField.textColor = UIColor.black
-    
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let logOutVC = segue.destination as? LogOutViewController else {return}
-        logOutVC.userName = currentUser.person.name + " " + currentUser.person.surname
-        logOutVC.userProfession = currentUser.person.profession
+        guard let tabBar = segue.destination as? UITabBarController else {return}
+        guard let viewControllers = tabBar.viewControllers else {return}
+        
+        for viewController in viewControllers {
+            if let logOutVC = viewController as? LogOutViewController {
+                logOutVC.currentUser = currentUser
+            } else if let navigationVC = viewController as? UINavigationController {
+                let profileVC = navigationVC.topViewController as! ProfileViewController
+                profileVC.currentUser = currentUser
+            }
+
+        }
     }
     
+    
     @IBAction func logInPressed() {
-//        if  userNameTextField.text != currentUser.login || passwordTextField.text != currentUser.password {
-//            showAlert(
-//                with: "Invalid login or password",
-//                and: "Enter correct login and password"
-//            )
-//            passwordTextField.text = ""
-//        }
+        if  userNameTextField.text != currentUser.login || passwordTextField.text != currentUser.password {
+            showAlert(
+                with: "Invalid login or password",
+                and: "Enter correct login and password"
+            )
+            passwordTextField.text = ""
+        }
     }
     
     @IBAction func forgotPressed(_ sender: UIButton) {

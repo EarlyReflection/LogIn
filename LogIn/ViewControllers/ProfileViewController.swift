@@ -8,22 +8,29 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
-
+    
+    @IBOutlet var name: UILabel!
+    @IBOutlet var surname: UILabel!
+    @IBOutlet var age: UILabel!
+    @IBOutlet var city: UILabel!
+    @IBOutlet var profession: UILabel!
+    @IBOutlet var hobby: UILabel!
+    
+    var currentUser: User!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        name.text = currentUser.person.name
+        surname.text = currentUser.person.surname
+        age.text = String(currentUser.person.age)
+        city.text = currentUser.person.city
+        profession.text = currentUser.person.profession
+        hobby.text = currentUser.person.hobby
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        guard let contactVC = segue.destination as? ContactViewController else {return}
+        contactVC.currentUser = currentUser
     }
-    */
 
 }

@@ -21,6 +21,10 @@ struct Person {
     let name: String
     let surname : String
     let age: Int
+    let city: String
+    let adress: String
+    let phone: String
+    let emale: String
     let hobby: String
     let image: String
     let profession: String
@@ -30,11 +34,14 @@ struct Person {
             name: "Vladimir",
             surname: "Dvornikov",
             age: 39,
-            hobby: "",
+            city: "Moscow",
+            adress: "Olkhovskaya str. 14",
+            phone: "+7 (929) 938-49-64",
+            emale: "vladimirdvirnikof@gmail.com",
+            hobby: "Music",
             image: "",
             profession: "Video editor and motion graphics designer"
         )
-        
     }
 }
  
