@@ -23,18 +23,7 @@ class LogOutViewController: UIViewController {
         userImage.layer.borderWidth = 2
         userImage.layer.borderColor = UIColor.white.cgColor
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        guard let tabBar = segue.destination as? UITabBarController else {return}
-//        guard let viewControllers = tabBar.viewControllers else {return}
-     
-//        for viewController in viewControllers {
-//            guard let navigationVC = viewController as? UINavigationController else {return}
-//            guard let profileVC = navigationVC.topViewController as? ProfileViewController else {return}
-//            profileVC.currentUser = currentUser
-        
-    }
-   
+       
     override func viewWillLayoutSubviews() {
         userImage.layer.cornerRadius = userImage.frame.width / 2
         

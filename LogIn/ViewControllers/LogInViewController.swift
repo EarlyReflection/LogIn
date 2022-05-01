@@ -11,7 +11,7 @@ class LoginViewController: UIViewController {
     
     @IBOutlet var userNameTextField: UITextField! {
         didSet {
-            // изменить текст и цвет paceholder
+            // меняет текст и цвет paceholder
             let placeholderText = NSAttributedString(
                 string: "user",
                 attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
@@ -48,10 +48,8 @@ class LoginViewController: UIViewController {
                 let profileVC = navigationVC.topViewController as! ProfileViewController
                 profileVC.currentUser = currentUser
             }
-
         }
     }
-    
     
     @IBAction func logInPressed() {
         if  userNameTextField.text != currentUser.login || passwordTextField.text != currentUser.password {
