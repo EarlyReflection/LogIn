@@ -9,7 +9,11 @@ import UIKit
 
 class LogOutViewController: UIViewController {
 
-    @IBOutlet var userImage: UIImageView!
+    @IBOutlet var userImage: UIImageView! {
+        didSet {
+            userImage.layer.cornerRadius = userImage.frame.width / 2
+        }
+    }
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var professionLabel: UILabel!
     
@@ -24,12 +28,6 @@ class LogOutViewController: UIViewController {
         userImage.layer.borderWidth = 2
         userImage.layer.borderColor = UIColor.white.cgColor
     }
-       
-    override func viewWillLayoutSubviews() {
-        userImage.layer.cornerRadius = userImage.frame.width / 2
-        
-    }
-    
 }
 
 
