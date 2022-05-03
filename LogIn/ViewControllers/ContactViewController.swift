@@ -11,7 +11,7 @@ class ContactViewController: UIViewController {
 
     @IBOutlet var fullName: UILabel!
     @IBOutlet var adress: UILabel!
-    @IBOutlet var emale: UILabel!
+    @IBOutlet var email: UILabel!
     @IBOutlet var phone: UILabel!
     
     var currentUser: User!
@@ -20,7 +20,7 @@ class ContactViewController: UIViewController {
         super.viewDidLoad()
         fullName.text = currentUser.person.name + " " + currentUser.person.surname
         adress.text = currentUser.person.city + ", " + currentUser.person.adress
-        emale.text = currentUser.person.emale
+        email.text = currentUser.person.email
         phone.text = currentUser.person.phone
     }
     

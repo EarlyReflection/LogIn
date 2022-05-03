@@ -24,7 +24,7 @@ struct Person {
     let city: String
     let adress: String
     let phone: String
-    let emale: String
+    let email: String
     let hobby: String
     let profession: String
     
@@ -36,7 +36,7 @@ struct Person {
             city: "Moscow",
             adress: "Voljskiy bulvar str. 16",
             phone: "+7 (929) 938-49-64",
-            emale: "vladimirdvirnikof@gmail.com",
+            email: "vladimirdvirnikof@gmail.com",
             hobby: "Music",
             profession: "Video edit, motion graphics design"
         )
