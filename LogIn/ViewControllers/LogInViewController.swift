@@ -33,7 +33,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         userNameTextField.textColor = UIColor.black
-        passwordTextField.textColor = UIColor.black
+        passwordTextField.textColor = UIColor.black`
         
     }
     
@@ -41,6 +41,7 @@ class LoginViewController: UIViewController {
         guard let tabBar = segue.destination as? UITabBarController else {return}
         guard let viewControllers = tabBar.viewControllers else {return}
         
+        // доступ к VC в таббаре, в ветке else if к VC в навигейшн контроллере
         for viewController in viewControllers {
             if let logOutVC = viewController as? LogOutViewController {
                 logOutVC.currentUser = currentUser

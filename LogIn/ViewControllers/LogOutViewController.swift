@@ -17,9 +17,10 @@ class LogOutViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameLabel.text = currentUser.person.name + " " + currentUser.person.surname
+        nameLabel.text = currentUser.person.fullName
         professionLabel.text = currentUser.person.profession
         
+        userImage.image = UIImage(named: currentUser.person.avatar)
         userImage.layer.borderWidth = 2
         userImage.layer.borderColor = UIColor.white.cgColor
     }

@@ -18,6 +18,7 @@ struct User {
 }
 
 struct Person {
+    let avatar: String
     let name: String
     let surname : String
     let age: Int
@@ -28,8 +29,13 @@ struct Person {
     let hobby: String
     let profession: String
     
+    var fullName: String {
+        "\(name) \(surname)"
+    }
+    
     static func getPerson() -> Person {
         Person(
+            avatar: "myPhoto",
             name: "Vladimir",
             surname: "Dvornikov",
             age: 39,
