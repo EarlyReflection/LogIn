@@ -33,7 +33,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         userNameTextField.textColor = UIColor.black
-        passwordTextField.textColor = UIColor.black`
+        passwordTextField.textColor = UIColor.black
         
     }
     
